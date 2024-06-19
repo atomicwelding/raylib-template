@@ -4,27 +4,29 @@
 
 
 #include <raylib.h>
+#include <raymath.h> 
 
-typedef struct params {
-    const int SCREEN_WIDTH;
-    const int SCREEN_HEIGHT;
-    const char* TITLE;
-    const int FPS;
-} params;
+#define SCREEN_WIDTH 400
+#define SCREEN_HEIGHT 400
+#define TITLE "Template"
+#define FPS 60
+
+
+#define timestep 10000
+#define dt (1.0f/FPS)
 
 
 int main(void) {
-    params p = { .SCREEN_WIDTH = 400, .SCREEN_HEIGHT = 400, .TITLE = "Raylib Template", .FPS = 60 };
     
-    InitWindow(p.SCREEN_WIDTH, p.SCREEN_HEIGHT, p.TITLE);
-    SetTargetFPS(p.FPS);
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
+    SetTargetFPS(FPS);
     
     while(!WindowShouldClose()) {
         // computing
                 
         // drawing
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(RAYWHITE);
         EndDrawing();
     }
 
